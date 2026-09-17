@@ -30,18 +30,26 @@ export default function CountdownCalendar() {
     return () => clearInterval(timer);
   }, []);
 
-  // November 2026 calendar days setup (Nov 1, 2026 is Sunday)
-  // Weekday order: Дш, Сш, Шш, Бш, Жм, Иш, Жш (Sun is 7th column)
-  // Days in Nov: 30
   const daysInNov = 30;
-  // Nov 1 2026 is Sunday (index 6 if Mon=0)
   const startOffset = 6; 
-
   const weekDays = ['Дш', 'Сш', 'Шш', 'Бш', 'Жм', 'Иш', 'Жш'];
 
   return (
-    <section className="py-16 px-4 bg-[#FFF5F7] relative">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-16 px-4 bg-[#FFF5F7] relative overflow-hidden">
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-lying-trans.png - 100% Transparent) */}
+      <motion.div
+        animate={{ y: [0, 15, 0], rotate: [0, -3, 0] }}
+        transition={{ repeat: Infinity, duration: 9, ease: "easeInOut" }}
+        className="absolute -left-8 top-16 sm:left-4 sm:top-12 w-64 sm:w-80 h-auto pointer-events-none z-0 opacity-35 mix-blend-multiply"
+      >
+        <img
+          src="/dariya-lying-trans.png"
+          alt="Дария декор"
+          className="w-full h-auto object-contain drop-shadow-md"
+        />
+      </motion.div>
+
+      <div className="max-w-4xl mx-auto relative z-10">
         
         {/* Section Title */}
         <motion.div
@@ -113,12 +121,10 @@ export default function CountdownCalendar() {
 
           {/* Days Grid */}
           <div className="grid grid-cols-7 text-center gap-1 text-xs sm:text-sm">
-            {/* Empty slots for offset */}
             {Array.from({ length: startOffset }).map((_, idx) => (
               <div key={`empty-${idx}`} className="p-2" />
             ))}
 
-            {/* Nov days 1 to 30 */}
             {Array.from({ length: daysInNov }).map((_, idx) => {
               const dayNum = idx + 1;
               const isTargetDay = dayNum === 15;

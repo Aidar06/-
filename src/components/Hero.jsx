@@ -9,29 +9,35 @@ export default function Hero() {
       <div className="absolute top-10 left-10 w-48 h-48 bg-pink-200/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-64 h-64 bg-rose-200/30 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Floating flower elements */}
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-butterfly.png - 100% Transparent) */}
+      <motion.div
+        animate={{ y: [0, -15, 0], rotate: [0, 3, 0] }}
+        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+        className="absolute -right-8 bottom-10 sm:right-10 sm:bottom-12 w-64 sm:w-96 h-auto pointer-events-none z-0 opacity-40 mix-blend-multiply"
+      >
+        <img
+          src="/dariya-butterfly.png"
+          alt="Дария декор"
+          className="w-full h-auto object-contain drop-shadow-md"
+        />
+      </motion.div>
+
+      {/* Floating Sparkles */}
       <motion.div
         animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
         transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-        className="absolute top-12 left-6 sm:left-16 text-pink-300 pointer-events-none"
+        className="absolute top-12 left-6 sm:left-16 text-pink-300 pointer-events-none z-10"
       >
         <Sparkles size={32} />
       </motion.div>
-      <motion.div
-        animate={{ y: [0, 10, 0], rotate: [0, -5, 0] }}
-        transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-20 right-6 sm:right-16 text-pink-300 pointer-events-none"
-      >
-        <Sparkles size={28} />
-      </motion.div>
 
       <div className="relative z-10 max-w-xl mx-auto flex flex-col items-center">
-        {/* Crown Icon */}
+        {/* Crown Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-md shadow-md border border-pink-200 flex items-center justify-center text-pink-500 mb-6"
+          className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-md shadow-md border border-pink-200 flex items-center justify-center text-pink-500 mb-6"
         >
           <Crown size={28} className="fill-pink-100" />
         </motion.div>
@@ -68,7 +74,7 @@ export default function Hero() {
           1 жаш салтанаты
         </motion.div>
 
-        {/* Decorated Baby Portrait Frame */}
+        {/* Restored Clean Flower Frame */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -81,7 +87,6 @@ export default function Hero() {
           {/* Frame Container */}
           <div className="relative w-full h-full p-2 bg-white rounded-full shadow-xl border-4 border-pink-100/80 flex items-center justify-center overflow-hidden">
             <div className="w-full h-full rounded-full bg-gradient-to-b from-pink-100 to-rose-50 flex flex-col items-center justify-center text-pink-400 p-4 relative overflow-hidden">
-              {/* Only Flower emoji as requested */}
               <div className="text-5xl mb-2 animate-bounce" style={{ animationDuration: '3s' }}>🌸</div>
               <span className="text-xs font-serif-custom tracking-wider text-pink-600 font-semibold uppercase">Баланын тушоосу</span>
               <span className="text-[10px] text-pink-400 mt-1">15.11.2026</span>
@@ -102,12 +107,12 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm sm:text-base text-slate-600 font-light"
         >
-          <div className="flex items-center gap-2 bg-white/70 px-4 py-2 rounded-full border border-pink-100 shadow-xs">
+          <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full border border-pink-100 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-pink-400" />
             <span>15 Ноябрь 2026</span>
           </div>
           <div className="hidden sm:block text-pink-300">•</div>
-          <div className="flex items-center gap-2 bg-white/70 px-4 py-2 rounded-full border border-pink-100 shadow-xs">
+          <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full border border-pink-100 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-pink-400" />
             <span>Саат: 15:00</span>
           </div>

@@ -33,7 +33,20 @@ export default function ProgramTimeline() {
 
   return (
     <section className="py-16 px-4 sm:px-6 bg-white relative overflow-hidden">
-      <div className="max-w-3xl mx-auto">
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-running-trans.png - 100% Transparent) */}
+      <motion.div
+        animate={{ y: [0, -14, 0], rotate: [0, 4, 0] }}
+        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+        className="absolute -right-6 top-24 sm:right-6 sm:top-20 w-64 sm:w-80 h-auto pointer-events-none z-0 opacity-35 mix-blend-multiply"
+      >
+        <img
+          src="/dariya-running-trans.png"
+          alt="Дария биринчи кадамы декор"
+          className="w-full h-auto object-contain drop-shadow-md"
+        />
+      </motion.div>
+
+      <div className="max-w-3xl mx-auto relative z-10">
 
         {/* Section Title */}
         <motion.div
@@ -51,7 +64,7 @@ export default function ProgramTimeline() {
           <div className="w-16 h-0.5 bg-pink-300 mx-auto mt-3 rounded-full" />
         </motion.div>
 
-        {/* Vertical Timeline with comfortable mobile padding */}
+        {/* Vertical Timeline */}
         <div className="relative pl-10 sm:pl-32">
           {/* Vertical Line */}
           <div className="absolute top-2 bottom-2 left-4 sm:left-[8rem] w-0.5 bg-gradient-to-b from-pink-200 via-pink-400 to-pink-200 -translate-x-1/2" />
@@ -76,7 +89,7 @@ export default function ProgramTimeline() {
                     </span>
                   </div>
 
-                  {/* Icon Node (Positioned cleanly on mobile without edge overflow) */}
+                  {/* Icon Node */}
                   <div className="absolute -left-10 sm:relative sm:left-0 z-10 -translate-x-1/2 sm:translate-x-0 pt-1">
                     <div
                       className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 ${
@@ -107,9 +120,11 @@ export default function ProgramTimeline() {
                         </span>
                       )}
                     </div>
+
                     <h3 className="text-lg sm:text-xl font-serif-custom font-semibold text-slate-800 mb-1.5">
                       {item.title}
                     </h3>
+
                     <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
                       {item.description}
                     </p>

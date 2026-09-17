@@ -20,7 +20,19 @@ export default function InvitationText() {
 
   return (
     <section className="py-16 px-4 bg-white relative overflow-hidden">
-      {/* Background Subtle Decor */}
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-bear.png - 100% Transparent) */}
+      <motion.div
+        animate={{ y: [0, 12, 0], rotate: [0, -3, 0] }}
+        transition={{ repeat: Infinity, duration: 9, ease: "easeInOut" }}
+        className="absolute -left-6 top-10 sm:left-4 sm:top-12 w-60 sm:w-80 h-auto pointer-events-none z-0 opacity-35 mix-blend-multiply"
+      >
+        <img
+          src="/dariya-bear.png"
+          alt="Дария декор"
+          className="w-full h-auto object-contain drop-shadow-md"
+        />
+      </motion.div>
+
       <div className="max-w-3xl mx-auto relative z-10">
 
         {/* Section Header */}
@@ -31,7 +43,7 @@ export default function InvitationText() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10"
         >
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-pink-50 border border-pink-200 text-pink-500 mb-3">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-pink-50 border border-pink-200 text-pink-500 mb-3 shadow-xs">
             <Quote size={20} />
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif-custom text-slate-800">
