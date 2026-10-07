@@ -36,14 +36,14 @@ export default function CountdownCalendar() {
 
   return (
     <section className="py-16 px-4 bg-[#FFF5F7] relative overflow-hidden">
-      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-lying-trans.png - 100% Transparent) */}
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-lying.webp - 100% Transparent PNG with intact eyes) */}
       <motion.div
         animate={{ y: [0, 15, 0], rotate: [0, -3, 0] }}
         transition={{ repeat: Infinity, duration: 9, ease: "easeInOut" }}
-        className="absolute -left-8 top-16 sm:left-4 sm:top-12 w-64 sm:w-80 h-auto pointer-events-none z-0 opacity-35 mix-blend-multiply"
+        className="absolute -left-8 top-16 sm:left-4 sm:top-12 w-64 sm:w-80 h-auto pointer-events-none z-0 opacity-40 mix-blend-multiply"
       >
         <img
-          src="/dariya-lying-trans.png"
+          src="/dariya-lying.webp"
           alt="Дария декор"
           className="w-full h-auto object-contain drop-shadow-md"
         />

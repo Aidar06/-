@@ -33,14 +33,14 @@ export default function ProgramTimeline() {
 
   return (
     <section className="py-16 px-4 sm:px-6 bg-white relative overflow-hidden">
-      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-running-trans.png - 100% Transparent) */}
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-running.webp - 100% Transparent PNG with intact eyes) */}
       <motion.div
         animate={{ y: [0, -14, 0], rotate: [0, 4, 0] }}
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-        className="absolute -right-6 top-24 sm:right-6 sm:top-20 w-64 sm:w-80 h-auto pointer-events-none z-0 opacity-35 mix-blend-multiply"
+        className="absolute -right-6 top-24 sm:right-6 sm:top-20 w-64 sm:w-80 h-auto pointer-events-none z-0 opacity-40 mix-blend-multiply"
       >
         <img
-          src="/dariya-running-trans.png"
+          src="/dariya-running.webp"
           alt="Дария биринчи кадамы декор"
           className="w-full h-auto object-contain drop-shadow-md"
         />

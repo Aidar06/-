@@ -20,14 +20,14 @@ export default function InvitationText() {
 
   return (
     <section className="py-16 px-4 bg-white relative overflow-hidden">
-      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-bear.png - 100% Transparent) */}
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-bear.webp - 100% Transparent PNG with intact eyes) */}
       <motion.div
         animate={{ y: [0, 12, 0], rotate: [0, -3, 0] }}
         transition={{ repeat: Infinity, duration: 9, ease: "easeInOut" }}
-        className="absolute -left-6 top-10 sm:left-4 sm:top-12 w-60 sm:w-80 h-auto pointer-events-none z-0 opacity-35 mix-blend-multiply"
+        className="absolute -left-6 top-10 sm:left-4 sm:top-12 w-60 sm:w-80 h-auto pointer-events-none z-0 opacity-40 mix-blend-multiply"
       >
         <img
-          src="/dariya-bear.png"
+          src="/dariya-bear.webp"
           alt="Дария декор"
           className="w-full h-auto object-contain drop-shadow-md"
         />

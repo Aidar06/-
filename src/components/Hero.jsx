@@ -9,14 +9,14 @@ export default function Hero() {
       <div className="absolute top-10 left-10 w-48 h-48 bg-pink-200/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-64 h-64 bg-rose-200/30 rounded-full blur-3xl pointer-events-none" />
 
-      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-butterfly.png - 100% Transparent) */}
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-butterfly.webp - 100% Transparent PNG with intact eyes) */}
       <motion.div
         animate={{ y: [0, -15, 0], rotate: [0, 3, 0] }}
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-        className="absolute -right-8 bottom-10 sm:right-10 sm:bottom-12 w-64 sm:w-96 h-auto pointer-events-none z-0 opacity-40 mix-blend-multiply"
+        className="absolute -right-8 bottom-10 sm:right-10 sm:bottom-12 w-64 sm:w-96 h-auto pointer-events-none z-0 opacity-45 mix-blend-multiply"
       >
         <img
-          src="/dariya-butterfly.png"
+          src="/dariya-butterfly.webp"
           alt="Дария декор"
           className="w-full h-auto object-contain drop-shadow-md"
         />
