@@ -5,26 +5,22 @@ import { Sparkles, Users, Scissors, Utensils, Music } from 'lucide-react';
 export default function ProgramTimeline() {
   const schedule = [
     {
-      time: '15:00',
       title: 'Коноктордун жыйналуусу',
       description: 'Ардактуу меймандарды салтанаттуу тосуп алуу жана ак дасторконго чакыруу.',
       icon: Users,
     },
     {
-      time: '15:30',
       title: 'Тушоо кесүү салтанаты',
       description: 'Дария кызыбыздын ак жолун ачуу: аркан кесүү жөрөлгөсү жана балдардын жарышы!',
       icon: Scissors,
       highlight: true,
     },
     {
-      time: '16:00',
       title: 'Ак дасторкон & Бата тилөө',
       description: 'Майрамдык дасторкон, улуулардын баталары жана ак тилектер.',
       icon: Utensils,
     },
     {
-      time: '18:00',
       title: 'Шоу программа & Оюндар',
       description: 'Шайыр оюндар, бий, эстелик сүрөттөр жана майрамдык таттуу кубаныч!',
       icon: Music,
@@ -33,7 +29,7 @@ export default function ProgramTimeline() {
 
   return (
     <section className="py-16 px-4 sm:px-6 bg-white relative overflow-hidden">
-      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-running.webp - 100% Transparent PNG with intact eyes) */}
+      {/* LARGE FLOATING BACKGROUND DECORATIVE ILLUSTRATION (dariya-running.webp) */}
       <motion.div
         animate={{ y: [0, -14, 0], rotate: [0, 4, 0] }}
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
@@ -65,11 +61,11 @@ export default function ProgramTimeline() {
         </motion.div>
 
         {/* Vertical Timeline */}
-        <div className="relative pl-10 sm:pl-32">
+        <div className="relative pl-10 sm:pl-16 max-w-2xl mx-auto">
           {/* Vertical Line */}
-          <div className="absolute top-2 bottom-2 left-4 sm:left-[8rem] w-0.5 bg-gradient-to-b from-pink-200 via-pink-400 to-pink-200 -translate-x-1/2" />
+          <div className="absolute top-2 bottom-2 left-4 sm:left-6 w-0.5 bg-gradient-to-b from-pink-200 via-pink-400 to-pink-200 -translate-x-1/2" />
 
-          <div className="space-y-8 sm:space-y-10">
+          <div className="space-y-7 sm:space-y-8">
             {schedule.map((item, idx) => {
               const Icon = item.icon;
 
@@ -80,17 +76,10 @@ export default function ProgramTimeline() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.12 }}
-                  className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-8 group"
+                  className="relative flex items-start gap-4 group"
                 >
-                  {/* Time Badge (Desktop Left Column) */}
-                  <div className="hidden sm:flex w-24 text-right justify-end pt-1">
-                    <span className="font-serif-custom font-bold text-xl text-pink-600">
-                      {item.time}
-                    </span>
-                  </div>
-
                   {/* Icon Node */}
-                  <div className="absolute -left-10 sm:relative sm:left-0 z-10 -translate-x-1/2 sm:translate-x-0 pt-1">
+                  <div className="absolute -left-10 sm:-left-10 z-10 -translate-x-1/2 pt-1">
                     <div
                       className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 ${
                         item.highlight
@@ -110,20 +99,16 @@ export default function ProgramTimeline() {
                         : 'bg-white border-pink-100 shadow-sm hover:shadow-md'
                     }`}
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="sm:hidden text-xs font-bold text-pink-600 bg-pink-100/80 px-3 py-1 rounded-full">
-                        ⏰ {item.time}
-                      </span>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <h3 className="text-lg sm:text-xl font-serif-custom font-semibold text-slate-800">
+                        {item.title}
+                      </h3>
                       {item.highlight && (
                         <span className="text-[10px] font-semibold text-rose-600 bg-rose-100/90 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                           Башкы Жөрөлгө
                         </span>
                       )}
                     </div>
-
-                    <h3 className="text-lg sm:text-xl font-serif-custom font-semibold text-slate-800 mb-1.5">
-                      {item.title}
-                    </h3>
 
                     <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
                       {item.description}

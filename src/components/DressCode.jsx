@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shirt, Sparkles, Check } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function DressCode() {
   const colors = [
@@ -12,43 +12,67 @@ export default function DressCode() {
   ];
 
   return (
-    <section className="py-16 px-4 bg-[#FFF5F7] relative">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="py-16 px-4 bg-[#FFF5F7] relative overflow-hidden">
+      <div className="max-w-3xl mx-auto text-center relative z-10">
 
-        {/* Header */}
+        {/* Header with user's elegant divider ornament */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-10 flex flex-col items-center"
         >
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white border border-pink-200 text-pink-500 mb-3 shadow-xs">
-            <Shirt size={20} />
-          </div>
           <h2 className="text-3xl sm:text-4xl font-serif-custom text-slate-800">
             Дресс-код
           </h2>
-          <div className="w-16 h-0.5 bg-pink-300 mx-auto mt-3 rounded-full" />
+
+          {/* User's authentic ornament divider */}
+          <div className="w-56 sm:w-72 mt-3 pointer-events-none">
+            <img
+              src="/ornament-1.webp"
+              alt="Кыргыз оюм"
+              className="w-full h-auto object-contain drop-shadow-xs"
+            />
+          </div>
         </motion.div>
 
-        {/* Main Card */}
+        {/* Main Card with Clean Elegant Ethno Styling */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-pink-100 relative overflow-hidden"
         >
-          <div className="inline-block px-6 py-2 bg-gradient-to-r from-pink-500 to-rose-400 text-white rounded-full text-base sm:text-lg font-serif-custom font-semibold tracking-wider uppercase mb-6 shadow-md">
-            "ЭТНО стиль"
+          {/* Top ornamental header */}
+          <div className="w-48 sm:w-64 mx-auto mb-4 pointer-events-none opacity-90">
+            <img
+              src="/ornament-5.webp"
+              alt="Оюм декор"
+              className="w-full h-auto object-contain"
+            />
           </div>
 
-          <p className="text-slate-600 font-light leading-relaxed max-w-xl mx-auto mb-8 text-sm sm:text-base">
-            Майрамыбызга кыргыз улуттук оюм-чиймелери, этно элементтери же жумшак пастелдик түстөгү кооз кийимдер менен келишиңиздерди суранабыз.
+          {/* Ethno Style Badge */}
+          <div className="relative inline-flex items-center gap-3 px-8 py-2.5 bg-gradient-to-r from-pink-500 to-rose-400 text-white rounded-full text-base sm:text-lg font-serif-custom font-semibold tracking-widest uppercase mb-6 shadow-md border border-pink-200">
+            <span>«ЭТНО стиль»</span>
+          </div>
+
+          <p className="text-slate-600 font-light leading-relaxed max-w-xl mx-auto mb-6 text-sm sm:text-base">
+            Майрамыбызга кыргыз улуттук оюм-чиймелери, заманбап этно элементтери же жумшак пастелдик түстөрдөгү кооз кийимдер менен келишиңиздерди суранабыз.
           </p>
 
+          {/* Middle ornamental divider */}
+          <div className="w-40 sm:w-56 mx-auto mb-8 pointer-events-none opacity-80">
+            <img
+              src="/ornament-3.webp"
+              alt="Оюм"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+
           {/* Color Palette Swatches */}
-          <div className="mb-6">
-            <span className="text-xs uppercase tracking-widest text-slate-400 block mb-4">
+          <div className="mb-6 relative z-10">
+            <span className="text-xs uppercase tracking-widest text-slate-400 block mb-4 font-medium">
               Сунушталган түстөр палитрасы
             </span>
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -70,10 +94,19 @@ export default function DressCode() {
             </div>
           </div>
 
-          {/* Tip Note */}
-          <div className="mt-8 pt-6 border-t border-pink-100 flex items-center justify-center gap-2 text-xs text-pink-700 bg-pink-50/60 p-3 rounded-2xl">
-            <Sparkles size={14} className="text-pink-500 shrink-0" />
-            <span>Сиздин катышууңуз жана кооз этно кийимиңиз тойго өзгөчө көрк берет!</span>
+          {/* Bottom ornament flourish */}
+          <div className="w-44 sm:w-60 mx-auto my-6 pointer-events-none opacity-80">
+            <img
+              src="/ornament-7.webp"
+              alt="Оюм"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+
+          {/* Ethno Tip Note */}
+          <div className="pt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-pink-700 bg-pink-50/60 p-3.5 rounded-2xl border border-pink-100">
+            <Sparkles size={16} className="text-pink-500 shrink-0" />
+            <span>Сиздердин улуттук этно образыңыздар майрамыбызга өзгөчө кыргызча көрк жана салтанат тартуулайт!</span>
           </div>
         </motion.div>
 

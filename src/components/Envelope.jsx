@@ -18,10 +18,10 @@ export default function Envelope({ isOpen, onOpen }) {
         colors: ['#F48FB1', '#F06292', '#FFD54F', '#FFFFFF', '#E91E63']
       });
 
-      // After slide apart (0.6s) + glow hold (0.4s) + smooth fade (0.6s), notify parent
+      // Smooth opening: slide apart (1.2s) + gentle glow hold & fade (1.0s), total ~2.2s
       setTimeout(() => {
         onOpen();
-      }, 1400);
+      }, 2000);
     }
   };
 
@@ -43,9 +43,9 @@ export default function Envelope({ isOpen, onOpen }) {
             transition={
               isOpening
                 ? {
-                    duration: 1.4,
-                    times: [0, 0.45, 1],
-                    ease: "easeOut",
+                    duration: 2.0,
+                    times: [0, 0.6, 1],
+                    ease: [0.25, 0.1, 0.25, 1],
                   }
                 : {}
             }
@@ -77,13 +77,13 @@ export default function Envelope({ isOpen, onOpen }) {
           {/* Envelope Outer Card Container */}
           <div className="relative z-20 w-full max-w-md h-full sm:h-[92vh] aspect-[9/16] sm:rounded-3xl shadow-2xl overflow-hidden border-0 sm:border-2 border-pink-100/80">
 
-            {/* Photo 2 (от2) - BASE BACKGROUND PHOTO (Slides DOWN by 105vh in 0.6s without fading early) */}
+            {/* Photo 2 (от2) - BASE BACKGROUND PHOTO (Smooth graceful slide DOWN) */}
             <motion.div
               initial={{ y: 0 }}
-              animate={isOpening ? { y: '105vh' } : { y: 0 }}
+              animate={isOpening ? { y: '110vh' } : { y: 0 }}
               transition={{
-                duration: 0.6,
-                ease: [0.4, 0, 0.2, 1],
+                duration: 1.3,
+                ease: [0.16, 1, 0.3, 1], // Smooth silk cubic-bezier
               }}
               className="absolute inset-0 w-full h-full z-10"
             >
@@ -94,13 +94,13 @@ export default function Envelope({ isOpen, onOpen }) {
               />
             </motion.div>
 
-            {/* Photo 1 (от1) - TOP FLAP WITH SEAL PHOTO (Slides UP by 105vh in 0.6s without fading early) */}
+            {/* Photo 1 (от1) - TOP FLAP WITH SEAL PHOTO (Smooth graceful slide UP) */}
             <motion.div
               initial={{ y: 0 }}
-              animate={isOpening ? { y: '-105vh' } : { y: 0 }}
+              animate={isOpening ? { y: '-110vh' } : { y: 0 }}
               transition={{
-                duration: 0.6,
-                ease: [0.4, 0, 0.2, 1],
+                duration: 1.3,
+                ease: [0.16, 1, 0.3, 1], // Smooth silk cubic-bezier
               }}
               className="absolute inset-0 w-full h-full z-20 pointer-events-none"
             >
